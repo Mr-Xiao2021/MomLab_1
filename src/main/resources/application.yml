@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: momlab1
+
+  # activemq configuration
+  activemq:
+    broker-url: tcp://114.132.224.128:61616
+    password: admin
+    user: admin
+
+  # pattern: point to point
+  jms:
+    pub-sub-domain: false
+
+

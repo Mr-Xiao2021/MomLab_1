@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天窗口</title>
+    <style>
+        /* 聊天窗口整体 */
+        .windowDiv{
+            width: 350px;
+            height: 600px;
+            margin: auto;
+            margin-top: 70px;
+            background-color: #f6f8f8;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border: black 3px solid;
+        }
+        /* 顶部标题 */
+        .headDiv{
+            height: 50px;
+            width: 100%;
+            font-size: 23px;
+            text-align: center;
+            line-height: 48px;
+            background-color: #d7dbda;
+        }
+        /* 滚动窗口 */
+        .milde{
+            width: 100%;
+            height: 492px;
+            overflow: auto;
+        }
+        .left{
+            width: auto;
+            height: auto;
+            float: left;
+        }
+        .right{
+            width: auto;
+            height: auto;
+            float: right;
+        }
+        /* 左边聊天内容 */
+        .leftDiv{
+            background-color: cadetblue;
+            border-bottom-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            font-size: 20px;
+            text-align: left;
+            padding: 5px;
+            margin-left: 65px;
+            margin-right: 10px;
+            margin-top: 35px;
+            position: relative;
+        }
+        /* 左边头像 */
+        .leftHead{
+            float: left;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        /* 左边时间 */
+        .leftTime{
+            float: left;
+            position: relative;
+            margin-left: 10px;
+            margin-top: 15px;
+            font-size: 12px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        /* 右边聊天内容 */
+        .rightDiv{
+            background-color: white;
+            border-bottom-left-radius: 8px;
+            border-top-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            font-size: 20px;
+            text-align: left;
+            padding: 5px;
+            margin-left: 10px;
+            margin-right: 65px;
+            margin-top: 35px;
+            position: relative;
+        }
+        /* 右边头像 */
+        .rightHead{
+            float: right;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        /* 右边时间 */
+        .rightTime{
+            float: right;
+            position: relative;
+            margin-right: 10px;
+            margin-top: 15px;
+            font-size: 12px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        /* 底部 */
+        .bottomDiv{
+            margin-top: 6px;
+            text-align: center;
+            width: 100%;
+            height: 52px;
+            background-color: #d7dbda;
+        }
+        /* 输入框 */
+        .inputDiv{
+            width: 258px;
+            float: left;
+            height: 40px;
+            border-color: #668B8B;
+            border-bottom-left-radius: 5px;
+            margin-left: 5px;
+        }
+        /* 发送按钮 */
+        .sendDiv{
+            background-color: #bfc4c4;
+            color: black;
+            font-size: 20px;
+            line-height: 39px;
+            width: 75px;
+            height: 46px;
+            float: right;
+            text-align: center;
+            border-bottom-right-radius: 5px;
+            margin-right: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="windowDiv">
+    <!-- 顶部 -->
+    <div class="headDiv">彭于晏</div>
+    <!-- 聊天窗口 -->
+    <div class="milde">
+        <div class="left">
+            <img class="leftHead" src="head1.png" alt="对方头像">
+            <div class="leftTime">16:04</div>
+            <div class="leftDiv" ><textarea th:text="${msg}"></textarea></div>
+        </div>
+
+<!--        <div class="left">-->
+<!--            <img class="leftHead" src="head1.png" alt="对方头像">-->
+<!--            <div class="leftDiv">你好这是我的中间件作业</div>-->
+<!--        </div>-->
+
+    </div>
+    <!-- 消息发送 -->
+    <div class="bottomDiv">
+        <!-- 输入框 -->
+
+        <input type="text" class="inputDiv" placeholder="请输入想要发送的内容" ></input>
+
+        <!-- 发送按钮 -->
+        <a href="https://www.baidu.com/">
+            <div class="sendDiv" >发送</div>
+        </a>
+    </div>
+</div>
+</body>
+</html>
